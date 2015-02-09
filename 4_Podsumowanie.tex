@@ -1,0 +1,49 @@
+\subsection{Podsumowanie i wnioski}
+
+\par
+\tab Dzięki użyciu modelu CIA zademonstrowanemu na początku rozdziału można odnieść system rzeczywisty do teoretycznego modelu w każdym z trzech wymiarów (Poufność, Integralność i Dostępność).
+
+\subsection{Integralność - Integrity}
+\par
+\tab Kwestie związane z Integralnością danych otrzymywanych przez oba protokoły: \textit{ZigBee i Bluetooth Low Energy} nie były empirycznie sprawdzane ponieważ obydwie specyfikacje (w przypadku ZigBee - 802.15.4 dla BLE 802.15.1) zawierają stosowne wymogi oraz mechanizmy dbające o integralność przesyłanych danych zarówno na poziomie warstwy fizycznej jak i programowej (stos protokołu). Z tego powodu korzystając z któregoś z tych interfejsów komunikacyjnych integralność danych dostajemy nie jako "z pudełka".
+
+
+\subsection{Dostępność - Availability}
+\par
+\tab Dostępność danych została zbadana pod kontem niezawodności oraz szybkości odpowiedzi w czasie. Oba protokoły: \textit{ZigBee i Bluetooth Low Energy} spełniają wymagania dostępności oraz gwarantują pewną odpowiedz w z góry ustalonym czasie.
+Dzięki temu konstruując system WSN lub RT można sobie założyć kilku milisekundowe opóźnienie wynikające z wymaganego czasu na przeprowadzenie transmisji RF oraz obsłużeniu przez system po obu stronach zdarzenia.
+
+\subsection{Poufność - Confidentiality}
+\par
+\tab Poufność danych oraz kwestie z nieautoryzowanym dostępem do danych zostały przeanalizowane w oparciu o najnowsze badania instytutów związanych z bezpieczeństwem elektronicznym oraz niezależnych konsultantów. \\
+W momencie kiedy potrzebujemy bezpiecznego systemu w którym dane przesyłane między urządzeniami mają być tajne oraz ich pochodzenie musi być niepodważalne, należy wyeliminować rozwiązania oparte o protokół BLE ponieważ na dzień dzisiejszy nie zapewnia on żadnego bezpieczeństwa przed przygotowanym napastnikiem. Również przy sieciach ZigBee należy odrzucić rozwiązania takie jak SSM \textit{(Standard Secuirty Mode)} czy tym bardziej nie szyfrowaną konfigurację sieci. ZigBee w trybie HSE \textit{(High Secuirty Mode)} wydaje się być dobrym wyborem ponieważ zapewnia ono bezpieczeństwo przed podsłuchiwaniem, czy przechwytywaniem klucza. Niestety tryb HSE posiada jedną krytyczną lukę a mianowicie podatność na atak wstrzykiwania pakietów przed którym trzeba się zabezpieczyć w wyższych warstwach protokołu a mianowicie w warstwie aplikacji. \\
+
+\subsection{Zabezpieczenie ZigBee HSE przed Atakiem \textit{Packet Injection} }
+\par
+\tab Aby zabezpieczyć się przed atakiem typu \textit{Packet Injection} który był opisany w ostatniej sekcji rozdziału 4.3 należy skorzystać z rozwiązania znanego z systemów zabezpieczeń samochodowyh firmy MicroChip \textit{KeeLoq}. KeyLoq jest protokołem opierającym się o kryptografię symetryczną stosowany w centralnych zamkach, jest on nie podatny na ataki typu \textit{Replay Attack} w których to napastnik podsłuchałby transmisji między kluczykiem RF a samochodem i w przyszłości reużyłby tej transmisji w celu odbezpieczenia samochodu. \\
+Idea zabezpieczenia jest bardzo prosta: Każdy z wysyłanych pakietów ma swój numer który jest zwiększany o 1 przy każdej transmisji i tworzy on chronologiczną zależność między pakietami. Numer ten jest szyfrowany w ramce danych dla tego atakujący nie jest w stanie go odszyfrować bez znajomości hasła. Numer ten jest na początku równy zeru i przy każdej transmisji odbiornik sprawdza czy otrzymany pakiet ma numer większy czy mniejszy bądz równy ostatniemu pakietowi. Jeśli ten numer jest większy pakiet jest normalnie przetwarzany natomiast jeśli nie pakiet zostaje ignorowany. \\
+Dodatkowo aby zabezpieczyć się przed "przekręceniem licznika" do numeru pakietu należy dodać losowy znak który również będzie ignorowany ale sprawi on że nigdy nie wystąpi sytuacja w której powstaną dwa identyczne pakiety i uniemożliwi to atakującemu na wstrzyknięcie pakietu. \\
+W celu poznania większej liczby szczegółów na temat obrony KeyLoq przed  \textit{Replay attack} należy skorzystać ze źródeł podanych w bibliografi. \\
+
+\mbox{}\\
+\begin{tabular}{ |p{3cm}||p{3cm}|p{3cm}|p{3cm}|  }
+ \hline
+ \multicolumn{4}{|c|}{Porównanie zgodnie z modelem CIA ZigBee i BLE} \\
+ \hline
+ Wymiar & Integrity & Availability & Confidentiality\\
+ \hline
+ Zigbee  & v  & v 	&   v*\\
+ BLE 	 & v   & v  & x\\
+ \hline
+\end{tabular}
+* {\small W trybie HSM i z programowym zabezpieczeniem przed packet injections. \par}  
+\mbox{}\\
+
+\subsection{Poodsumowanie}
+\par
+\tab Po przeanalizowaniu systemu w wymiarach: Integralności i Dostępności zarówno BLE jak i ZigBee prezentują się bardzo dobrze i nie ma między nimi dużych różnic. Największą możliwą różnicą w zastosowaniu jest możliwość integracji BLE z zewnętrznymi komercyjnymi urządzeniami dostępnymi na rynku takimi jak smartphony czy tablety, ponieważ ZigBee jako przemysłowy protokół komunikacji nie znajduje się w konsumenckich urządzeniach elektronicznych. Z drugiej natomiast strony Bluetooth Low Energy nie umożliwia stworzenia architektury sieciowej o wielu urządzeniach podłączonych do sieci. \\
+Porównując ZigBee i BLE w wymiarze bezpieczeństwa mamy tutaj znaczną przewagę protokołu ZigBee wobec protokołu Bluetooth Low Energy który sam z siebie nie zapewnia praktycznie żadnego bezpieczeństwa. Dobierając fizyczne układy do projektu kiedy decydujemy się na ZigBee należy również pamiętać że nie wszystkie dostępne na rynku moduły RF mogą pracować w trybie HSM, z tego powodu dobór odpowiedniego modułu może się wiązać z dodatkowymi kosztami które również trzeba uwzględnić.\\
+
+Dobierając protokół komunikacyjny trzeba na pierwszym miejscu przeanalizować jego warunki pracy, architekturę rozwiązania oraz współpracę z innymi urządzeniami, systemami. Jeśli bierzemy pod uwagę również kwestię bezpieczeństwa to zawsze zaleca się z korzystania z standardowych rozwiązań bezpieczeństwa dostarczanych przez protokół komunikacyjny (tzw: \textit{Out Of The Box}) z którego się korzysta, w tym wypadku ZigBee okazuje się właściwym wyborem. Jednak czasem jeśli kluczową kwestią jest integracja z zewnętrznymi urządzeniami takimi jak telefony i tablety, BLE staje się bardziej pożądanym wyborem. W takim przypadku gdy bezpieczeństwo jest porządaną cechą należy zastanowić się nad innymi zastosowaniami dostępnymi na rynku takimi jak Wifi lub skorzystanie z gotowych bibliotek kryptograficznych dostępnych na rynku. Często jednak wprowadzenie zewnętrznej kryptografii na poziomie aplikacji bywa kłopotliwe, kosztowne czasowo oraz pochłaniające dużą część zasobów mikrokontrolera. Fakt ten może skłonić konstruktora do ponownego przemyślenia innych rozwiązań bezprzewodowych opartych o internet: Wifi, 6LoWPAN. 
+
+\clearpage

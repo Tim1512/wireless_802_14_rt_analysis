@@ -1,0 +1,44 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\newcommand{\tab}{\hspace*{2em}}
+
+\begin{document}
+
+% Definition of title and author
+\title{ Analiza bezpieczeństwa bezprzewodowych sieci sensorycznych w ujęciu systemów czasu rzeczywistego. }
+\author{Maciej Grochowski \\
+\\
+PJWSTK  }
+\maketitle
+
+
+
+ZigBee Wireless Networks and Transceivers -Shahin Farahani
+this is my first 
+
+
+
+
+\clearpage 
+%Spis treści
+\input{spis_tresci}
+
+%1Wstęp
+\input{1_wstep}
+
+%2Wprowadzenie teoretyczne
+\input{2_0_Sieci_bezprzewodowe_krotkiego_zasiegu}
+\input{2_Standard_IEEE_802_15}
+	%Bluetooth
+	\input{2_1_Krotko_802_15_1}
+	\input{2_1_2_Standard_802_15_4}
+	\input{2_1_3_zigbee}
+	
+	
+\end{document}

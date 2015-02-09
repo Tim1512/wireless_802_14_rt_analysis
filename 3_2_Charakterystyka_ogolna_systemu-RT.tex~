@@ -1,0 +1,10 @@
+\subsection{Charakterystyka systemu czasu rzeczywistego}
+\subsubsection{Opis samodzielnego systemu RT}
+
+\par 
+\tab Budowa ogólna systemów mikroprocesorowych w tym systemów czasu rzeczywistego jest do siebie bardzo zbliżona. Każdy system posiada blok sensorów które dają sygnały wejściowe, blok mikrokontrolera oraz blok wyjściowy do którego trafia wynik przetworzonych sygnałów z bloku sensorycznego. \\
+
+\tab W naszym przypadku jako układ mikroprocesorowy na którym będzie działać system czasu rzeczywistego został wybrany układ bazujący na mikrokontrolerze firmy NXP opartym o mikrokontroler LPC4330 o architekturze ARM Cortex-M4. Mikrokontroler znajduje się na płytce ewaluacyjnej stworzonej przez firmę NGX o developerskiej nazwie LPC4330-Xplorer. W momencie pisania tej pracy układ LPC4330 o mocy do 200MHz jest jednym z najszybszych procesorów o architekturze Cortex-M4.
+Na płytce ewaluacyjnej LPC4330-Xplorer oprócz micro-controllera znajduje się wiele ciekawych peryferiów takich jak przetworniki ADC do zastosowań audio, karta pamięci micro-sd, gniazdo i moduł ETH oraz porty we/wy w których skład wchodzi ponad 50 pinów GPIO pozwalających na podpięcie do modułu dowolnych peryferiów.
+
+Na potrzeby niniejszej pracy do płytki Xplorer dołączymy jedynie moduł radiowy oraz przekaźnik dwustanowy i diodę led. 

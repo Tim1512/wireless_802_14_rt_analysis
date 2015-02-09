@@ -1,0 +1,115 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{CJKutf8}
+\usepackage{wasysym}
+
+\makeatletter
+\endlinechar\m@ne
+
+\def\CJK@XX#1#2{
+  \ifx #2\protect
+    \expandafter\CJK@XXp\expandafter#1
+  \else
+    \expandafter\ifx\csname u8:\string #1\string #2\endcsname \relax
+      \csname CJK@\number `#1\endcsname{`#2}
+      \expandafter\CJK@ignorespaces
+    \else
+      \csname u8:\string #1\string #2\endcsname
+    \fi
+  \fi}
+\def\CJK@XXp#1#2{
+  \expandafter\ifx\csname u8:\string #1\string #2\endcsname \relax
+    \csname CJK@\number `#1\endcsname{`#2}
+    \expandafter\CJK@ignorespaces
+  \else
+    \csname u8:\string #1\string #2\endcsname
+  \fi}
+
+\def\CJK@XXX#1#2#3{
+  \ifx #2\protect
+    \expandafter\CJK@XXXp\expandafter#1#3
+  \else
+    \expandafter\ifx\csname u8:\string #1\string #2\string #3\endcsname \relax
+      \csname CJK@\number `#1\endcsname{`#2}{`#3}
+      \expandafter\CJK@ignorespaces
+    \else
+      \csname u8:\string #1\string #2\string #3\endcsname
+    \fi
+  \fi}
+\def\CJK@XXXp#1#2#3#4{
+  \expandafter\ifx\csname u8:\string #1\string #2\string #4\endcsname \relax
+    \csname CJK@\number `#1\endcsname{`#2}{`#4}
+    \expandafter\CJK@ignorespaces
+  \else
+    \csname u8:\string #1\string #2\string #4\endcsname
+  \fi}
+
+\endlinechar `\^^M
+\makeatother
+
+\newcommand{\tab}{\hspace*{2em}}
+
+\begin{document}
+\begin{CJK*}{UTF8}{min}
+
+% Definition of title and author
+\title{ Analiza bezpieczeństwa bezprzewodowych sieci sensorycznych w ujęciu systemów czasu rzeczywistego\\}
+\author{inż. Maciej Grochowski \\
+\\
+ポーランド日本情報工科大学}
+\maketitle 
+
+\mbox{}\\
+\mbox{}\\
+
+\begin{flushright}
+\emph{Praca Dyplomowa :} \\
+napisana pod kierunkiem \\ \textsc{ Dr.~Bogdan Księżopolski}
+\end{flushright}
+
+
+
+
+
+
+
+\clearpage 
+%Spis treści
+\input{spis_tresci}
+
+	%1Wstęp
+	\input{1_wstep}
+
+	%2Wprowadzenie teoretyczne
+	\input{2_0_Sieci_bezprzewodowe_krotkiego_zasiegu}
+	\input{2_Standard_IEEE_802_15}
+		%Bluetooth
+		\input{2_1_Krotko_802_15_1}
+		\input{2_1_2_Standard_802_15_4}
+		\input{2_1_3_zigbee}
+	\input{2_2_Budowa_Protokolu_ZigBee}
+	\input{2_4_Budowa_Protokolu_BLE}
+	\input{2_3_Bezprzewodowe_Sieci_Sensoryczne}
+	\input{2_5_Omowienie_Zagadnien_Bezpieczenstwa_WSN}
+	
+	%Part 3 implementacja systemu WSN/RT
+	\input{3_Implementacja_systemu_wsn_rt}
+	\input{3_2_Charakterystyka_ogolna_systemu-RT}
+	
+	%Part 4
+	\input{4_Przedstawienie_Wynikow}
+	\input{4_Analiza_Czasowa}
+	\input{4_Bezpieczenstwo_Zigbee_Ble}
+	\input{4_Podsumowanie}
+
+\input{bibliografia}
+
+\end{CJK*}	
+\end{document}

@@ -1,0 +1,18 @@
+\documentclass[twocolumn,a4paper]{article}
+
+% Definition of title and author
+\title{ Analiza bezpieczeństwa bezprzewodowych sieci sensorycznych w ujęciu systemów czasu rzeczywistego.}
+\author{inż Maciej Grochowski\\
+\\
+Polish-Japanese Institute of Information Technology
+}
+
+
+\begin{document}
+
+\maketitle
+
+
+ZigBee Wireless Networks and Transceivers -Shahin Farahani
+
+\end{document}

@@ -1,0 +1,25 @@
+\section{Przedstawienie wyników badań i ich omówienie}
+
+\subsection{Polityka Bezpieczeństwa informacji}
+
+W celu określenia czy dane rozwiązanie można nazwać bezpiecznym czy nie trzeba posłóżyć się pewną metryką. Sprawdzoną metryką jest tzw: \textit{Triada CIA - Confidentiality, integrity and availability}, pozwala ona na odniesienie dowolnego systemu informatycznego do modelu CIA poprzez analizę systemu/zasobów informatycznych w trzech wymiarach: poufności, integralności i dostępności.
+
+\begin{enumerate}
+	\item Poufność (\textit{Confidentiality}): Każdy system powinien mieć określone grupy odbiorców którzy mogą mieć dostęp do określonych danych. Poufność jest to cecha systemu informatycznego gwarantująca, że dane w systemie będą jedynie dostępne dla określonych osób/podmiotów i osoby trzecie (tzw. intruzi) nie będą w stanie poznaćtych danych. Ta włąściwość systemów informatycznych jest najczęściej zapewniana przez kryptografię.
+	\item Integralność (\textit{Integrity}): Systemy komunikacyjne jak i również przechowujące dane muszą byś w stanie zapewnić integralność dostarczanych danych czyli innymi słowy być odporne na zgubienie danych czy dostarczenie uszkodzonych/niepełnych/przekłamnych danych. W systemach służących do komunikacji ta cecha jest najczęściej realizowana za pomocą podziału danych na pakiety i sprawdzaniu: czy pakiet jest nie uszkodzony oraz czy zależności między pakietami są właściwe (czy nie ma zgubionych lub nadmiarowych pakietów danych)
+	\item Dostępność(\textit{Availability})): Główną funkcją wszelakich systemów informatycznych jest funkcja dostarczania danych do odbiorcy. Dostępność gwarantuje nam, że po wysłaniu prawidłowego żądania dostępu do danych otrzymamy je w skończonym-określonym czasie.
+\end{enumerate}
+
+\par
+\tab Ponieważ opisany wcześniej System RT jest systemem krytycznym ze względu na funkcję \textit{(przyp. Sterowanie Laserem Medycznym przeznaczonym do wykonywania zabiegów na ludziach)} \\
+Aby zbadać czy zbudowany System RT jest \textit{"Bezpieczny"} zmierzymy go w wymiarach: Poufności, Integralności oraz Dostępności danych. Następnie na podstawie tych wyników spróbujemy określić czy spełnia on wymogi bezpieczeństwa modelu CIA. \\
+Aby określić co tak naprawdę musi zostać zbadane należy przyporządkować do właściwości C-I-A określone moduły, właściwości danych:
+\begin{enumerate}
+	\item Poufność - Wiąże się bezpośrednio z szyfrowaniem danych wysyłanych w pakietach oraz z kwestiami takimi jak ustalenie bezpiecznej sesji czy działaniem mechanizmów komunikacyjnych protokołu. W celu ustalenia czy system spełnia dane wymogi poufności w dalszej części zostanie przeprowadzona analiza bezpieczeństwa dla rozwiązania opartego o protokół komunikacyjny ZigBee oraz BLE.
+	\item Integralność - Za tę właściwość odpowiadają warstwy fizyczne protokołu (W wypadku Zigbee - protokół 802.15.4 natomiast dla BLE 802.15.1) ponieważ ta właściwość jest określona przez sam protokół i zapewniona za pomocą stosownych mechanizmów takich jak np. CRC dla każdego pakietu czy stos protokołu, nie będzie ona w ramach niniejszej pracy szczegółowo badana.
+	\item Dostępność - Zależy bezpośrednio od tego jak szybko jest w stanie odbiornik odpowiedzieć na żądanie przychodzące z nadajnika. Jest to również jedna z cech systemów real-time. Aby sprawdzić czy system spełnia wymogi dostępności w kolejnej części zostaną przedstawione wyniki eksperymentu oraz ich analiza.
+\end{enumerate}
+
+W dalszej części zostaną przedstawione wyniki "Analizy czasowej systemu RT" oraz "Analiza podatności i zagrożeń dla protokołów ZigBee i BLE". Następnie w odniesieniu do modelu CIA zostanie określone czy dany System-RT jest \textit{Bezpieczny} czy nie, a ponieważ niniejszy system RT jest systemem wzorcowym i modularnym, na jego podstawie będzie można zadecydować czy inny system opierający się o protokół komunikacji BLE/ZigBee może być bezpiecznym, ponieważ analiza będzie ogólna.
+
+\clearpage

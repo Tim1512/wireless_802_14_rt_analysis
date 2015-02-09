@@ -1,0 +1,43 @@
+\subsection{Bezprzewodowe sieci sensoryczne}
+
+\subsubsection{Wprowadzenie}
+
+\par 
+\tab 	Pojęcie bezprzewodowych sieci sensorycznych jest używane w odniesieniu do autonomicznych rozproszonych sensorów które oprócz podstawowej funkcji jaką jest zbieranie danych z otoczenia lub układu pomiarowego również są w stanie komunikować się między sobą, jednakże komunikacja ta jest wykorzystywana głównie do transportu pakietów do koordynatora sieci lub z koordynatora do urządzeń końcowych czyli sensorów.
+W literaturze angielskiej sieci te są nazwane \textit{Wireless sensor network} w skrócie \textbf{WSN} i stanowią one podzbiór sieci wchodzących w skład rodziny sieci typu \textit{Wireless personal area networks} czyli \textbf{WPANs}.
+\\
+Nowoczesne sieci WSN są projektowane na wzór aplikacji wojskowych takich jak tzn: \textit{battlefield surveillance} czyli sieci które są samoorganizacyjne i odporne na awarie czy zniszczenia.
+Przeznaczenie sieci sensorycznych jest bardzo zróżnicowane poczynając od prostych aplikacji w których jednostka centralna komunikuje się z kilkoma sensorami a kończąc na rozległych sieciach z wieloma podsieciami. Są one stosowane we wszystkich dziedzinach przemysłu poczynając od aplikacji konsumenckich takich jak inteligentne domy a kończąc na rozwiązaniach specjalistycznych takich jak przemysł militarny, urządzenia medyczne czy przemysł kosmiczny.
+\\
+\par Podstawową autonomiczną jednostką która wchodzi w skład sieci WSN jest węzeł. Każdy z węzłów jest połączony do conajmniej jednego węzła w sieci. Sieć może składać się od kilku do tysięcy komunikujących się ze sobą węzłów. Sieci sensoryczne z góry nie narzucają technologii za pomocą której węzły sieci komunikują się ze sobą, WSN jest określeniem bardziej samego zastosowania sieci niż jej konkretnej implementacji sprzętowej czy programowej, jednak zwykło się określać nazwą \textit{Wireless Sensor network} sieci posiadając następujące cechy charakterystyczne: \\
+\\
+\begin{itemize}
+  \item Wymaganie energooszczędności od autonomicznych węzłów sieci
+  \item Umiejętność radzenia sobie z awariami węzłów
+  \item Możliwość przemieszczania się, znikania z sieci węzłów bez szkodliwych skutków dla całej sieci
+  \item Możliwość wzajemnej współpracy heterogenicznych węzłów
+  \item Skalowalność
+  \item Odporność na trudne warunki środowiskowe
+  \item Transparentność między podsieciami
+  \item Cross-level Design.
+\end{itemize}
+\par Cross-Level Design: \\
+Pojęcie Cross-Level-Design jest to akademicka definicja stosowana w odniesieniu do sieci wielowarstwowych które to rozwiązuje problem wynikający z limitów pewnych warstw sieci (najczęściej limitów warstwy fizycznej) poprzez oddelegowanie problemu do wyższej warstwy sieci.
+Przykładem może być typowy problem efektywnej transmisji w obciążonych wielowęzłowych sieciach heterogenicznych. Ponieważ najniższa warstwa jaką jest PHY posiada pewne fizyczne limity które są opisane w standardzie 802.15 następuje sprzężenie zwrotne między warstwą fizyczną i wyższymi warstwami. Mechanizmami które powstały specjalnie ze względu na CLD są np: samoorganizacja sieci, automatyczna zmiana kanałów nadawania czy algorytmy routingu.\\
+Podejsciem odwrotnym do \textit{Cross-layer} jest tzw. \textit{layered module} czyli klasyczne podejście polegające na rozbudowywaniu warstwy w taki sposób aby problemy danej warstwy były rozwiązywane na jej poziomie.
+\\
+
+\subsubsection{Komponenty sieci WSN :} 
+
+\par Węzeł sieci (\textit{Node}) : \\
+\tab Węzłem sieci jest nazywany zbiór modułów wchodzących w skład jednego czujnika. Typowo sensor składa się z jednostki kontrolnej oraz jednostki transmisyjnej. Najbardziej typowym designem jest połączenie mikrokontrolera (jednostki kontrolnej) z układem nadawczym radiowym oraz blokiem odpowiadającym za zarządzanie poborem mocy. Projektując sieci najczęściej dąży się do tego aby węzły sieci były jak najbardziej proste i nie skomplikowane. Zarządzanie mocą realizowane najczęściej za pomocą zasilania bateryjnego i układów oszczędzania energii, jest stosowane w celu zapewnienia sieci cechy mobilności i reorganizacji węzłów.
+\\
+\par Koordynator sieci : \\
+\tab
+\\
+\par Koordynator sieci : \\
+\tab
+
+
+
+\clearpage

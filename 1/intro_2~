@@ -1,0 +1,16 @@
+Tytuł pracy:
+
+Analiza bezpieczeństwa bezprzewodowych sieci sensorycznych w ujęciu systemów czasu rzeczywistego.
+
+
+Wstęp:
+
+Od zawsze postęp technologiczny ułatwiał przeciętnym ludziom życie czyniąc przedmioty codziennego użycia łatwiejszymi w obsłudze, wygodniejszymi i bardziej przyjaznymi użytkownikowi. Również zawsze z postępem technologii inżynierowie stawali przed nowymi wyzwaniami i problemami które musieli rozwiązać aby stworzyć projekt. Nie inaczej było z bezprzewodową transmisją danych która sukcesywnie w ostatnich latach wypiera przewodowe rozwiązania. 
+
+Powstało kilka standardów transmisji radiowej opartej o standard IEEE.802.11, do najbardziej znanych przedstawicieli tej grupy należy transmisja oparta o WiFi czy Bluetooth, natomiast istnieje jeszcze kilka standardów takich jak ZigBee czy BLE (Bluetooth Low Energy implementujący standard Bluetooth 4.0)
+
+Niniejsza praca traktuje o systemach czasu rzeczywistego opartych o architekture bezprzewodowych sieci sensorycznych w których wykorzystywany do komunikacji jest głównie standardu ZigBee ale również zostaną omówione inne rozwiązania.
+
+W zakres pracy wchodzi również zbudowanie i implementacja heterogenicznej bezprzewodowej sieci sensorycznej, oraz zbadanie zachodzących w niej zjawisk 
+
+
