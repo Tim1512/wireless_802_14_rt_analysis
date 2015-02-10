@@ -1,4 +1,59 @@
 \subsubsection{Standard 802.15.4}
 
+\par
+\tab \textbf{Definicja protokołu} \\
+Standard IEEE 802.15.4 jest standardem dla warstwy fizycznej oraz dostępu do medium komunikacyjnego dla sieci LR-WPAN (low rate wireless personal area networks). Skupia się on na podstawowych najniższych warstwach komunikacji. Architektura protokołu bazuje na modelu OSI, jednakże tylko najniższe warstwy są ściśle ustandaryzowane mechanizmami takimi jak np. CSMA. Do interakcji z górnymi warstwami można użyć zalecanej normy IEEE 802.2 który określa logiczną podwarstwę sterowania dostępem do warstw wyższych z warstwy MAC poprzez warstwy pośrednie.
+
+\par
+\tab \textbf{Specyfikacja widmowa} \\
+Istnieją trzy pasma częstotliwości przewidziane dla standardu IEEE 802.15.4 które zostały zdefiniowane ostatnio w roku 2006
+\begin{enumerate}
+	\item 868-868.6 MHZ (868MHz band)
+	\item 902–928  MHz (915 MHz band)
+	\item 2400–2483.5 MHz (2.4 GHz band)
+\end{enumerate} 
+
+Pasmo 868 MHz jest wykorzystywane w Europie w wielu aplikacjach bezprzewodowych krótkiego zasięgu, 915 MHz natomiast jest używane w Północnej Ameryce oraz Australii. Pasmo 2.4 GHz jest z koleji powszechnie wykorzystywane na całym świecie. \\
+
+\par
+\tab \textbf{Charakterystyka częstotliwościowa} \\
+W sieciach IEEE 802.15.4 występuje kila dopuszczalnych modulacji częstotliwościowych: BPSK, ASK czy O-QPSK. Bezpośrednio metoda modulacji przenosi się na dopuszczalne prędkości transmisji danych i tak dla modulacji BPSK będzie to 40Kb/s, ASK 250 Kb/s a dla O-QPSK 250 Kb/s. \\
+Szczegółowa charakterystuka znajduje się w tabeli poniżej: \\
+
+\mbox{}\\
+\begin{tabular}{ |p{2cm}||p{1.5cm}|p{1.5cm}|p{1.8cm}|p{1.8cm}|p{1.8cm}|p{3cm}|  }
+ \hline
+ Częstot. (MHz) & Chann nr. & Modulacja & Chip Rate (Kchip/s) & Bit Rate (Kb/s) & Symbol Rate (Ksymb/s) & Modulacja Widma \\
+ \hline
+868–868.6 & 1 & BPSK & 300 & 20 & 20 & Binary DSSS \\
+ \hline
+902–928 & 10 & BPSK & 600 & 40 & 40 & Binary DSSS \\
+ \hline
+868–868.6 & 1 & ASK & 400 & 250 & 12.5 & 20-bit PSSS \\
+ \hline
+902–928 & 10 & ASK & 1600 & 250 & 50 & 5-bit PSSS \\
+ \hline
+868–868.6 & 1 & O-QPSK & 400 & 100 & 25 & 16-array orthogonal \\
+ \hline
+902–928 & 10 & O-QPSK & 1000 & 250 & 62.5 & 16-array orthogonal \\
+ \hline
+2400–2483.5 & 16 & O-QPSK & 2000 & 250 & 62.5 & 16-array orthogonal \\
+
+ \hline
+\end{tabular}
+\mbox{}\\
+
+\par
+\tab \textbf{Budowa standardu} \\
+Sam standard IEEE 802.15.4 definiuje dwie warstwy: Warstwę fizyczną połączenia (PHY) oraz warstwę sieciowią (MAC). W warstwie MAC główne funkcjonalności sieci  opierają się na nadzorowaniu oraz nawiązywaniu połączenia, zarządzaniu transmisją oraz adresacją samego urządzenia. Natomiast w warstwie PHY następuje zamiana pakietów na strumień bitów, modulacja oraz bezpośrednia transmisja radiowa. \\
+
+\par
+\tab \textbf{Charakterystyka urządzeń w sieci 802.15.4} \\
+Standard IEE 802.15.4 definiuje trzy główne role urządzeń w sieciach WPAN ze względu na funkcję pełnioną w całej sieci PAN.
+\begin{enumerate}
+	\item PAN Coordinator (FFD)
+	\item Coordinator (FFD)
+	\item Device (RFD or FFD)
+\end{enumerate}  
 
 \clearpage

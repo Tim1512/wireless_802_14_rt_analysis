@@ -90,10 +90,10 @@ napisana pod kierunkiem \\ \textsc{ Dr.~Bogdan Księżopolski}
 	%2Wprowadzenie teoretyczne
 	\input{2_0_Sieci_bezprzewodowe_krotkiego_zasiegu}
 	\input{2_Standard_IEEE_802_15}
-		%Bluetooth
-		\input{2_1_Krotko_802_15_1}
-		\input{2_1_2_Standard_802_15_4}
-		\input{2_1_3_zigbee}
+	%Bluetooth
+	\input{2_1_Krotko_802_15_1}
+	\input{2_1_2_Standard_802_15_4}
+	\input{2_1_3_zigbee}
 	\input{2_2_Budowa_Protokolu_ZigBee}
 	\input{2_4_Budowa_Protokolu_BLE}
 	\input{2_3_Bezprzewodowe_Sieci_Sensoryczne}

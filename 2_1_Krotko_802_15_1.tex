@@ -2,6 +2,24 @@
 
 \par
 \tab Standard Bluetooth jak wszystkie z rodziny IEEE.802.15 działa na częstotliwości 2.4 GHz. Wywodzi się on ze standardu 802.15.1 ale z czasem powstała specjalna grupa zajmująca się jedynie technologią Bluetooth i sam standard 802.15.1 przestał być rozwijany kosztem samego protokołu Bluetooth. Obecnie standard ten został wypuszczony w kilku wersjach: 1.0, 1.1, 1.2, 2.0,2.1, 3.0, 4.0, 4.1\\
-Widmo sygnału rozciąga się od 2400 do 2483.5 MHz i zawiera w sobie 79 kanałów transmisyjnych każdy o częstotliwości 1MHz. (Standard 4.0 korzysta z 40 kanałów o szerokości 2MHz). Początkowo korzystał on jedynie z Modulacji GFSK (Gaussian frequency-shift keying) ale z czasem zaczęto stosować (wersje 2.0+) DQPSK  (Differential Quaternary Phase Shift Keying) i 8DPSK.
+Widmo sygnału rozciąga się od 2400 do 2483.5 MHz i zawiera w sobie 79 kanałów transmisyjnych każdy o częstotliwości 1MHz. (Standard 4.0 korzysta z 40 kanałów o szerokości 2MHz). Początkowo korzystał on jedynie z Modulacji GFSK (Gaussian frequency-shift keying) ale z czasem zaczęto stosować (wersje 2.0+) DQPSK  (Differential Quaternary Phase Shift Keying) i 8DPSK. \\
+
+\par W przeciwieństwie do początkowych wersji standardu np. 1.0-2.0 która w zastosowaniu miałą być jedynie zamiennikiem dla przewodowego portu szeregowego, standard Bluetooth 4.0+ wprowadza bardzo wiele profilów dedykowanych do wielu różych zastosowań w tym do przesyłania muzyki czy danych a więc takich zastosowań w których przesyłane są duże bloki danych. \\
+\par W bezprzewodowych sieciach sensorycznych, bardzo rzadko mamy doczynienia z dużymi transferami danych, ponieważ wiążą się one z dużym zurzyciem energii elektrycznej którego minimalizacja jest jednym z obecnych podstaw w projektowaniu sieci WSN. Twórcy standardu Bluetooth mając to na uwadze w wersji 4.0 dodali również profil Bluetooth Low Energy (nazywany również Bluetooth Smart), ma on za zadanie zapewnienie wolniejszego transferu danych z zachowaniem energooszczędności. \\
+\par Sam Bluetooth jednak jest szybkim protokołem transmisyjnym i w celu implementacji wersji protokołu energooszczędnej, musiał zostać on gruntownie przerobiony w efekcie czego powstał Bluetooth smart, który z samym standardem 4.0 ma niewiele wspólnego, natomiast twórcy Bluetooth mogą się pochwalić rozwiązaniem które jest energooszczędne i stanowi część zbioru profili Bluetooth 4.0. \\
+Z powodu różnic w budowie, które zostaną opisane w dalszej części pracy, występuje również różnica w użytkowaniu a mianowicie taka, że: urządzenie wyposażone w sam profil Bluetooth LE nie jest w stanie nawiązać komunikacji w urządzenie z bluetooth 4.0 (i niższym) które nie implementuje (najczęściej sprzętowo) standardu LE. Myśląc o Bluetooth należy rozróżniać że BLE i Bluetooth 4.0 mimo nazwy są fizycznie różniącymi się protokołami nie zawsze umożliwiającymi wzajemną transmisję. \\
+Ponieważ w dalszej części pracy skupimy się na profilu Bluetooth Low Energy ze względu na możliwości wykorzystania w bezprzewodowych sieciach sensorycznych, niniejszy rozdział w skrócie przedstawia budowę protokołu Bluetooth w celu późniejszego porównania go do BLE. \\
+
+\par 
+\tab \textbf{Odkrywanie Urządzeń} \\
+Tak jak wszystkie bezprzewodowe protokoły Bluetooth ma możliwość decydowania o nawiązaniu konkretnego połączenia z innym widocznym urządzeniem. Kanały Bluetooth dzielą się na tzw. \textit{piconet} oraz kanały rozgłośnieniowe. Aby urządzenie stało się widoczne musi ogłosić swoją obecność wysyłając pakiet zawierający ich adres. Kiedy urządzenie nawiąże połączenie dołącza do \textit{piconet-u} w ramach którego prowadzi połączenie natomiast ma również możliwość dalej rozgłaszać swoją obecność w sieci (co w przypadku BLE jest nie możliwe) \\
+
+\par 
+\tab \textbf{Architektura protokołu} \\
+Bluetooth może być ogólnie podzielony na dwie części: Kontroler Bluetooth oraz Host. \\
+Protokołem transportowym jest analogiczny do TCP - RFCOMM który jest używany do emulowania portu szeregowego, wysyłania tzw. AT command (standardowy protokół wykorzystywany w urządzeniach typu serial-port). \\
+Ponieważ standard bluetooth definiuje architekturę host-kontroler najniższą warstwą łączącą kontroler i host-a jest tzw.  \textit{Host-Controller-Interface} w której odbywa się nawiązywanie połączenia czy zakończenie transmisji. \\
+Oprócz HCI występuje jeszcze warstwa LMP \textit{Link Manager Protocol} w której znajduje się stos protokołu oraz odbywają niskopoziomowe kwestie związane z kryptografią autentykacją oraz parowaniem \\
+Najniższą warstwą związaną bezpośrednio z transmisją jest \textit{Baseband controller} odpowiedzialny za fizyczną transmisję radiową oraz obsługę radia.
 
 \clearpage 

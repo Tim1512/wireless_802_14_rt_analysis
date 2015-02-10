@@ -27,17 +27,20 @@ Przykładem może być typowy problem efektywnej transmisji w obciążonych wiel
 Podejsciem odwrotnym do \textit{Cross-layer} jest tzw. \textit{layered module} czyli klasyczne podejście polegające na rozbudowywaniu warstwy w taki sposób aby problemy danej warstwy były rozwiązywane na jej poziomie.
 \\
 
-\subsubsection{Komponenty sieci WSN :} 
+\subsubsection{Podstawowe komponenty sieci WSN :} 
 
+
+\par Koordynator sieci (\textit{ZigBee Coordinator – ZC}) : \\
+\tab  Dla każdej sieci może i musi występować tylko jedno takie urządzenie, służy jako węzeł początkowy do którego mogą się przyłączać pozostałe urządzenia, zazwyczaj pełni rolę urządzenia zbierającego dane, zarządza ono również całą siecią - tzn. odpowiada za wybór kanału komunikacyjnego, dołączanie nowych urządzeń.
+\\
+\par Router : \\
+\tab Przekazuje pakiety dalej, umożliwia wiele przeskoków (multihop routing). Router może również łączyć wiele różnych sieci Zigbee między sobą.
+\\
+\par Urządzenie końcowe (\textit{ZigBee End Device – ZED}) : \\
+\tab przesyła dane do routera do którego jest przyłączone, może być czasowo usypiane w celu zmniejszenia zużycia energii.
+\\
 \par Węzeł sieci (\textit{Node}) : \\
 \tab Węzłem sieci jest nazywany zbiór modułów wchodzących w skład jednego czujnika. Typowo sensor składa się z jednostki kontrolnej oraz jednostki transmisyjnej. Najbardziej typowym designem jest połączenie mikrokontrolera (jednostki kontrolnej) z układem nadawczym radiowym oraz blokiem odpowiadającym za zarządzanie poborem mocy. Projektując sieci najczęściej dąży się do tego aby węzły sieci były jak najbardziej proste i nie skomplikowane. Zarządzanie mocą realizowane najczęściej za pomocą zasilania bateryjnego i układów oszczędzania energii, jest stosowane w celu zapewnienia sieci cechy mobilności i reorganizacji węzłów.
-\\
-\par Koordynator sieci : \\
-\tab
-\\
-\par Koordynator sieci : \\
-\tab
-
-
+Najczęściej węzeł sieci jest połączeniem Routera i End Device, którego układ radiowy potrafi pełnić te dwie funkcję równocześnie.
 
 \clearpage
